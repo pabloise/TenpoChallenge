@@ -8,13 +8,17 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "typecheck": "yarn tsc"
+    "typecheck": "yarn tsc",
+    "prepare": "husky install"
   },
   "dependencies": {
+    "@os-team/i18next-react-native-language-detector": "^1.0.23",
     "@react-navigation/native": "^6.1.6",
     "@reduxjs/toolkit": "^1.9.5",
     "husky": "^8.0.3",
+    "i18next": "^22.4.15",
     "react": "18.2.0",
+    "react-i18next": "^12.2.2",
     "react-native": "0.71.7",
     "react-native-safe-area-context": "^4.5.1",
     "react-native-screens": "^3.20.0",

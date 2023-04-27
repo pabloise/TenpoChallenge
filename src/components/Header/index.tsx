@@ -1,17 +1,15 @@
-import {Text} from 'react-native';
 import React from 'react';
+import {useTranslation} from 'react-i18next';
+import {Text} from 'react-native';
+
 import * as S from './styles';
 
-type Props = {
-  pepe: number;
-};
-
-const Header: React.FC<Props> = props => {
-  console.log('props: ', props);
+const Header = () => {
+  const {t} = useTranslation();
 
   return (
     <S.View>
-      <Text>Header</Text>
+      <Text>{t('Home.Header', 'The header')}</Text>
     </S.View>
   );
 };
