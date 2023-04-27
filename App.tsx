@@ -7,6 +7,7 @@ import {Provider} from 'react-redux';
 
 import styled from 'styled-components/native';
 import Hero from './src/components/Hero';
+import AddressButton from './src/components/AddressButton';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
             <Header />
             <Hero />
           </ContainerView>
+          <AddressButton />
         </StyledSafeAreaView>
       </NavigationContainer>
     </Provider>
