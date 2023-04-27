@@ -7,13 +7,15 @@ export const TouchableOpacity = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   padding: 22px 0px;
-  border-top-right-radius: 50px;
-  border-top-left-radius: 50px;
+  border-top-right-radius: 32px;
+  border-top-left-radius: 32px;
+  position: relative;
+  margin-top: -10px;
 `;
 
 export const Text = styled.Text`
   padding-left: 10px;
   font-family: 'Gotham-Light';
-  font-size: 16;
+  font-size: 16px;
   color: #028f7f;
 `;

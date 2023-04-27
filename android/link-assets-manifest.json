@@ -4,6 +4,10 @@
     {
       "path": "assets/fonts/Gotham-Light.ttf",
       "sha1": "4de9c556b65923a4d3addd5a8e1cd141867b2f3c"
+    },
+    {
+      "path": "assets/fonts/GothamBold.ttf",
+      "sha1": "d210a13e95908ff5b3448a4a8686c49522bf3da3"
     }
   ]
 }

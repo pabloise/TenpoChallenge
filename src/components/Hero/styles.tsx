@@ -4,7 +4,7 @@ export const Container = styled.View`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: 40;
+  padding-top: 40px;
 `;
 
 export const View = styled.View`
@@ -38,7 +38,7 @@ export const DotsImage = styled.Image`
   width: 28px;
   height: 6px;
   position: absolute;
-  bottom: 20;
+  bottom: 20px;
   right: 0;
 `;
 
@@ -61,8 +61,8 @@ export const Cross3 = styled.Image`
   width: 7.9px;
   height: 7.9px;
   position: absolute;
-  left: 20;
-  top: -50;
+  left: 20px;
+  top: -50px;
 `;
 
 export const Cross4 = styled.Image`
