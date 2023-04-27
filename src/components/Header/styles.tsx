@@ -4,7 +4,7 @@ export const View = styled.View`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 40px 15px 0px 16px;
+  padding-top: 40px;
   align-items: center;
 `;
 

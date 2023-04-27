@@ -6,13 +6,17 @@ import {store} from './store';
 import {Provider} from 'react-redux';
 
 import styled from 'styled-components/native';
+import Hero from './src/components/Hero';
 
 const App = () => {
   return (
     <Provider store={store}>
       <NavigationContainer>
         <StyledSafeAreaView>
-          <Header />
+          <ContainerView>
+            <Header />
+            <Hero />
+          </ContainerView>
         </StyledSafeAreaView>
       </NavigationContainer>
     </Provider>
@@ -22,6 +26,10 @@ const App = () => {
 const StyledSafeAreaView = styled.SafeAreaView`
   background-color: #f2f2f2;
   flex: 1;
+`;
+
+const ContainerView = styled.View`
+  padding: 0px 15px 0px 16px;
 `;
 
 export default App;
