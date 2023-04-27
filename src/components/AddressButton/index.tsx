@@ -1,11 +1,13 @@
 import * as S from './styles';
 import React from 'react';
-import AddressButtonImage from '../../assets/AddressButtonImage.svg';
+
+import AddressIcon from '../../assets/AddressIcon.svg';
 
 const AddressButton = () => {
   return (
     <S.TouchableOpacity>
-      <AddressButtonImage />
+      <AddressIcon />
+      <S.Text>Agregar dirección de entrega</S.Text>
     </S.TouchableOpacity>
   );
 };

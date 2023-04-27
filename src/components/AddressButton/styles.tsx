@@ -11,6 +11,9 @@ export const TouchableOpacity = styled.TouchableOpacity`
   border-top-left-radius: 50px;
 `;
 
-export const View = styled.View``;
-
-export const Text = styled.Text``;
+export const Text = styled.Text`
+  padding-left: 10px;
+  font-family: 'Gotham-Light';
+  font-size: 16;
+  color: #028f7f;
+`;
