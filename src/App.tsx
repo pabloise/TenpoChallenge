@@ -3,12 +3,12 @@ import styled from 'styled-components/native';
 import {Provider} from 'react-redux';
 import {NavigationContainer} from '@react-navigation/native';
 
-import {store} from './store';
+import {store} from '../store';
 
-import AddressButton from './src/components/AddressButton';
-import Header from './src/components/Header';
-import Hero from './src/components/Hero';
-import HomeBody from './src/components/HomeBody';
+import AddressButton from './components/AddressButton';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import HomeBody from './components/HomeBody';
 
 const App = () => {
   // const getData = async () => {
