@@ -38,4 +38,5 @@ export const CarouselHelper = styled.View`
 
 export const Title = styled.Text`
   font-family: 'GothamBold';
+  text-transform: uppercase;
 `;

@@ -8,11 +8,15 @@ const RestaurantItem = ({item}: any) => {
     <TouchableOpacity>
       <S.RestaurantItemWrapper>
         <S.ImageWrapper>
-          <S.Image source={item.image} />
-          <S.Circle></S.Circle>
+          <S.Image source={{uri: item.logoURL}} />
+          {item?.discount > 0 && <S.Circle></S.Circle>}
           <S.DiscountWrapper>
-            <S.Percentaje>{item.discount}%</S.Percentaje>
-            <S.DiscountText>DCTO</S.DiscountText>
+            {item?.discount > 0 && (
+              <>
+                <S.Percentaje>{item.discount}%</S.Percentaje>
+                <S.DiscountText>DCTO</S.DiscountText>
+              </>
+            )}
           </S.DiscountWrapper>
         </S.ImageWrapper>
         <S.InfoWrapper>
@@ -20,10 +24,10 @@ const RestaurantItem = ({item}: any) => {
           <S.RatingWrapper>
             <S.Raiting>
               <StarIcon />
-              <S.RatingText>{item.raiting}</S.RatingText>
+              <S.RatingText>{item.rating}</S.RatingText>
             </S.Raiting>
             <S.DelayText>
-              {item.delayMin}-{item.delayMax} min.
+              {item.deliveryTimeMinMinutes}-{item.deliveryTimeMaxMinutes} min.
             </S.DelayText>
           </S.RatingWrapper>
         </S.InfoWrapper>

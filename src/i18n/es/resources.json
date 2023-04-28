@@ -1,5 +1,8 @@
 {
   "Home": {
-    "Header": "El cabezal"
+    "AddDeliveryAddress": "Agregar dirección de entrega",
+    "RestaurantsTitle": "Restaurantes",
+    "CategoriesTitle": "Categorías",
+    "FavoritesTitle": "Tus favoritos"
   }
 }

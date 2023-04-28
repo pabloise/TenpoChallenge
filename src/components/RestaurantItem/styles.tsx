@@ -55,6 +55,7 @@ export const Image = styled.Image`
   width: 105px;
   height: 105px;
   position: relative;
+  border-radius: 5px;
 `;
 
 export const Circle = styled.View`

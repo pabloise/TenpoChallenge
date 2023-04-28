@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-export const FavouriteWrapper = styled.View`
+export const FavoriteWrapper = styled.View`
   align-items: center;
   width: 250px;
   padding-top: 20;

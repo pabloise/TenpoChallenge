@@ -1,5 +1,8 @@
 {
   "Home": {
-    "Header": "The header"
+    "AddDeliveryAddress": "Add delivery address",
+    "RestaurantsTitle": "Restaurants",
+    "CategoriesTitle": "Categories",
+    "FavoritesTitle": "Your favorites"
   }
 }

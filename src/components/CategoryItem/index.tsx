@@ -6,9 +6,9 @@ const CategoryItem = ({item}: any) => {
     <S.CategoriesWrapper>
       <S.CarouselHelper>
         <S.Slide>
-          <S.Image source={item.image}>
+          <S.Image source={{uri: item.imageURL}}>
             <S.Opacity>
-              <S.Text>{item.name}</S.Text>
+              <S.Text>{item.nameES}</S.Text>
             </S.Opacity>
           </S.Image>
         </S.Slide>
