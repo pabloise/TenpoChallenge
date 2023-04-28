@@ -2,12 +2,24 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "assets/fonts/Gotham-Book.ttf",
+      "sha1": "254d831dd1c16d71d28d96414d7c125062290cff"
+    },
+    {
       "path": "assets/fonts/Gotham-Light.ttf",
       "sha1": "4de9c556b65923a4d3addd5a8e1cd141867b2f3c"
     },
     {
       "path": "assets/fonts/GothamBold.ttf",
       "sha1": "d210a13e95908ff5b3448a4a8686c49522bf3da3"
+    },
+    {
+      "path": "assets/fonts/GothamMedium.ttf",
+      "sha1": "b7f0ed4dcf6148e944fceae336ad64e231880285"
+    },
+    {
+      "path": "assets/fonts/GothamUltra.ttf",
+      "sha1": "e76e90a080446893bc35d9f8681ebb4586d93161"
     }
   ]
 }

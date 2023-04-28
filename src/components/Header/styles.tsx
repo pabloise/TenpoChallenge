@@ -4,7 +4,6 @@ export const View = styled.View`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: 40px;
   align-items: center;
 `;
 

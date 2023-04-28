@@ -59,6 +59,9 @@
 	<array>
 		<string>Gotham-Light.ttf</string>
 		<string>GothamBold.ttf</string>
+		<string>GothamUltra.ttf</string>
+		<string>GothamMedium.ttf</string>
+		<string>Gotham-Book.ttf</string>
 	</array>
 </dict>
 </plist>

@@ -12,10 +12,13 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		2A7A0F25D3EB41ECAC0D8410 /* GothamMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96CFE6646EC54A36BECD8C85 /* GothamMedium.ttf */; };
+		2CD3B4F7E6F44BF381A1E11A /* GothamUltra.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C052B5892E14F9699DEED2D /* GothamUltra.ttf */; };
 		2DB2F00A177D47DF83AB4D90 /* GothamBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 401CE4F64DA8490BA3A701BA /* GothamBold.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-ChallengeTenpo-ChallengeTenpoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-ChallengeTenpo-ChallengeTenpoTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		999F42BC071041AEB84FDF92 /* Gotham-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 281E08BF91FA4181BE4E42D0 /* Gotham-Light.ttf */; };
+		A3E9BB3E88B14AAA8BBD3DCF /* Gotham-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD1253E818A4098B484C52B /* Gotham-Book.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,11 +45,14 @@
 		281E08BF91FA4181BE4E42D0 /* Gotham-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-Light.ttf"; path = "../assets/fonts/Gotham-Light.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-ChallengeTenpo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeTenpo.debug.xcconfig"; path = "Target Support Files/Pods-ChallengeTenpo/Pods-ChallengeTenpo.debug.xcconfig"; sourceTree = "<group>"; };
 		401CE4F64DA8490BA3A701BA /* GothamBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GothamBold.ttf; path = ../assets/fonts/GothamBold.ttf; sourceTree = "<group>"; };
+		4C052B5892E14F9699DEED2D /* GothamUltra.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GothamUltra.ttf; path = ../assets/fonts/GothamUltra.ttf; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-ChallengeTenpo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeTenpo.release.xcconfig"; path = "Target Support Files/Pods-ChallengeTenpo/Pods-ChallengeTenpo.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-ChallengeTenpo-ChallengeTenpoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeTenpo-ChallengeTenpoTests.debug.xcconfig"; path = "Target Support Files/Pods-ChallengeTenpo-ChallengeTenpoTests/Pods-ChallengeTenpo-ChallengeTenpoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-ChallengeTenpo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChallengeTenpo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DD1253E818A4098B484C52B /* Gotham-Book.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-Book.ttf"; path = "../assets/fonts/Gotham-Book.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ChallengeTenpo/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-ChallengeTenpo-ChallengeTenpoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeTenpo-ChallengeTenpoTests.release.xcconfig"; path = "Target Support Files/Pods-ChallengeTenpo-ChallengeTenpoTests/Pods-ChallengeTenpo-ChallengeTenpoTests.release.xcconfig"; sourceTree = "<group>"; };
+		96CFE6646EC54A36BECD8C85 /* GothamMedium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GothamMedium.ttf; path = ../assets/fonts/GothamMedium.ttf; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -105,6 +111,9 @@
 			children = (
 				281E08BF91FA4181BE4E42D0 /* Gotham-Light.ttf */,
 				401CE4F64DA8490BA3A701BA /* GothamBold.ttf */,
+				4C052B5892E14F9699DEED2D /* GothamUltra.ttf */,
+				96CFE6646EC54A36BECD8C85 /* GothamMedium.ttf */,
+				5DD1253E818A4098B484C52B /* Gotham-Book.ttf */,
 			);
 			name = Resources;
 			path = "";
@@ -261,6 +270,9 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				999F42BC071041AEB84FDF92 /* Gotham-Light.ttf in Resources */,
 				2DB2F00A177D47DF83AB4D90 /* GothamBold.ttf in Resources */,
+				2CD3B4F7E6F44BF381A1E11A /* GothamUltra.ttf in Resources */,
+				2A7A0F25D3EB41ECAC0D8410 /* GothamMedium.ttf in Resources */,
+				A3E9BB3E88B14AAA8BBD3DCF /* Gotham-Book.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

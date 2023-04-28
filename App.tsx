@@ -8,7 +8,7 @@ import {Provider} from 'react-redux';
 import styled from 'styled-components/native';
 import Hero from './src/components/Hero';
 import AddressButton from './src/components/AddressButton';
-import RestaurantMain from './src/components/RestaurantMain';
+import HomeBody from './src/components/HomeBody';
 
 const App = () => {
   return (
@@ -20,7 +20,7 @@ const App = () => {
             <Hero />
           </ContainerView>
           <AddressButton />
-          <RestaurantMain />
+          <HomeBody />
         </StyledSafeAreaView>
       </NavigationContainer>
     </Provider>

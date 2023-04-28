@@ -8,9 +8,7 @@ export const Container = styled.View`
 
 export const View = styled.View`
   justify-content: center;
-  align-items: center;
   background-color: white;
-  flex: 1;
   border-top-right-radius: 32px;
   border-top-left-radius: 32px;
 `;
