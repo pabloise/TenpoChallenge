@@ -1,6 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {Category} from '../../../types';
 import {RootState} from '../../store';
+import {fetchCategories} from './actions';
 
 type InitialState = {
   data: Category[];
@@ -13,15 +14,13 @@ const initialState: InitialState = {
 export const categoriesSlice = createSlice({
   name: 'categories',
   initialState,
-  reducers: {
-    getCategories: (state, action) => {
-      state.data = [...state.data, action.payload];
-    },
+  reducers: {},
+  extraReducers: builder => {
+    builder.addCase(fetchCategories.fulfilled, (state, action) => {
+      state.data = [...action.payload];
+    });
   },
 });
-
-// Action creators are generated for each case reducer function
-export const {getCategories} = categoriesSlice.actions;
 
 export const selectCategories = (state: RootState) => state.categories.data;
 
