@@ -16,7 +16,7 @@ const HomeBody = () => {
 
   return (
     <S.Container>
-      <S.ScrollView>
+      <S.ScrollView showsVerticalScrollIndicator={false}>
         <S.CarouselsWrapper>
           <Carousel
             array={restaurants}

@@ -1,6 +1,5 @@
 import React from 'react';
 import * as S from './styles';
-import StarIcon from '../../assets/star.svg';
 
 const FavoriteItem = ({item}: any) => {
   return (
@@ -8,13 +7,13 @@ const FavoriteItem = ({item}: any) => {
       <S.FoodImage source={{uri: item.imageURL}} />
       <S.RestaurantImage source={{uri: item.restaurant.imageURL}} />
       <S.Card>
-        <S.ProductInfo>
-          <S.Text>{item.nameES}</S.Text>
+        <S.RatingWrapper>
+          <S.FavoriteName>{item.nameES}</S.FavoriteName>
           <S.Raiting>
             <S.RaitingText>{item.restaurant.rating}</S.RaitingText>
-            <StarIcon />
+            <S.StarImage source={require('../../assets/estrella.png')} />
           </S.Raiting>
-        </S.ProductInfo>
+        </S.RatingWrapper>
         <S.ProductInfo>
           <S.RestoTitle>{item.restaurant.name}</S.RestoTitle>
           <S.Text>

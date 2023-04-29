@@ -1,14 +1,10 @@
 import React from 'react';
-import styled from 'styled-components/native';
 import {Provider} from 'react-redux';
-import {NavigationContainer} from '@react-navigation/native';
 
 import {store} from './redux/store';
-
-import AddressButton from './components/AddressButton';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import HomeBody from './components/HomeBody';
+import {MainNavigation} from './screens';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Home from './screens/Home';
 
 const App = () => {
   // const getData = async () => {
@@ -22,32 +18,20 @@ const App = () => {
   //   }
   // };
 
+  const Stack = createNativeStackNavigator();
+
   return (
     <Provider store={store}>
-      <NavigationContainer>
-        <StyledSafeAreaView>
-          <ContainerView>
-            <Header />
-            <Hero />
-          </ContainerView>
-          <AddressButton />
-          <HomeBody
-          // restaurantData={restaurantData}
-          // categoriesData={categoriesData}
-          />
-        </StyledSafeAreaView>
-      </NavigationContainer>
+      <MainNavigation>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+          }}>
+          <Stack.Screen name='Home' component={Home} />
+        </Stack.Navigator>
+      </MainNavigation>
     </Provider>
   );
 };
-
-const StyledSafeAreaView = styled.SafeAreaView`
-  background-color: #f2f2f2;
-  flex: 1;
-`;
-
-const ContainerView = styled.View`
-  padding: 0px 15px 0px 16px;
-`;
 
 export default App;

@@ -35,10 +35,32 @@ export const RestaurantImage = styled.Image`
   z-index: 2;
 `;
 
+export const FavoriteName = styled.Text`
+  font-family: 'Gotham-Light';
+  font-size: 12px;
+  display: flex;
+`;
+
+export const StarImage = styled.Image`
+  width: 12px;
+  height: 12px;
+`;
+
+export const RatingWrapper = styled.View`
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const Raiting = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
+
 export const RaitingText = styled.Text`
   font-family: 'Gotham-Light';
   font-size: 12px;
-  padding-right: 2px;
 `;
 
 export const ProductInfo = styled.View`
@@ -56,9 +78,4 @@ export const Text = styled.Text`
   font-family: 'Gotham-Light';
   font-size: 12px;
   padding: 5px 0px;
-`;
-
-export const Raiting = styled.View`
-  flex-direction: row;
-  align-items: center;
 `;
