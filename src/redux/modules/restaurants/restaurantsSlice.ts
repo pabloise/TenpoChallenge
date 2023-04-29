@@ -1,6 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {Restaurant} from '../../../types';
 import {RootState} from '../../store';
+import {fetchRestaurants} from './actions';
 
 type InitialState = {
   data: Restaurant[];
@@ -13,15 +14,13 @@ const initialState: InitialState = {
 export const restaurantsSlice = createSlice({
   name: 'restaurants',
   initialState,
-  reducers: {
-    getRestaurants: (state, action) => {
-      state.data = [...state.data, action.payload];
-    },
+  reducers: {},
+  extraReducers: builder => {
+    builder.addCase(fetchRestaurants.fulfilled, (state, action) => {
+      state.data = [...action.payload];
+    });
   },
 });
-
-// Action creators are generated for each case reducer function
-export const {getRestaurants} = restaurantsSlice.actions;
 
 export const selectRestaurants = (state: RootState) => state.restaurants.data;
 
