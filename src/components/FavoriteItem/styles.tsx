@@ -1,21 +1,20 @@
 import styled from 'styled-components/native';
 
-export const FavoriteWrapper = styled.View`
+export const FavoriteWrapper = styled.TouchableOpacity`
   align-items: center;
   width: 250px;
-  padding-top: 20;
+  margin-right: 15px;
 `;
 
 export const Card = styled.View`
-  width: 240px;
+  width: 250px;
   padding: 10px 5px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  margin-top: -5;
-  border-width: 0.2;
-  border-radius: 2;
+  border-width: 0.2px;
+  border-radius: 2px;
   border-color: #ddd;
-  border-bottom-width: 0.2;
+  border-bottom-width: 0.2px;
 `;
 
 export const FoodImage = styled.Image`
@@ -23,6 +22,8 @@ export const FoodImage = styled.Image`
   height: 95px;
   position: relative;
   z-index: 1;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 `;
 
 export const RestaurantImage = styled.Image`

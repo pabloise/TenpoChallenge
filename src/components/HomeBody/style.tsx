@@ -7,14 +7,13 @@ export const Container = styled.View`
 `;
 
 export const ScrollView = styled.ScrollView`
-  /* justify-content: center; */
   background-color: white;
   border-top-right-radius: 32px;
   border-top-left-radius: 32px;
 `;
 
 export const CarouselsWrapper = styled.View`
-  padding-bottom: 60px;
+  padding: 38px 0px;
 `;
 
 export const Text = styled.Text`

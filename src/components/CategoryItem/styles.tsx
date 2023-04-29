@@ -1,6 +1,9 @@
 import styled from 'styled-components/native';
 
-export const CategoriesWrapper = styled.View``;
+export const CategoriesWrapper = styled.View`
+  align-items: flex-start;
+  padding-right: 10px;
+`;
 
 export const Image = styled.ImageBackground`
   width: 155px;
@@ -8,11 +11,11 @@ export const Image = styled.ImageBackground`
 `;
 
 export const Slide = styled.TouchableOpacity`
-  padding-top: 10;
   width: 150px;
   height: 65px;
   border-radius: 8px;
   overflow: hidden;
+  border-radius: 6px;
 `;
 
 export const Opacity = styled.View`
@@ -27,10 +30,7 @@ export const Text = styled.Text`
   font-family: 'GothamUltra';
   font-size: 10px;
   letter-spacing: 3px;
-`;
-
-export const CarouselHelper = styled.View`
-  align-items: flex-start;
+  text-transform: uppercase;
 `;
 
 export const Title = styled.Text`

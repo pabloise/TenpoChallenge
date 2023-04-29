@@ -1,11 +1,11 @@
 import styled from 'styled-components/native';
 
-export const RestaurantItemWrapper = styled.View`
+export const RestaurantItemWrapper = styled.TouchableOpacity`
   width: 105px;
+  height: auto;
   display: flex;
   flex-direction: column;
   margin-right: 15px;
-  margin-top: 20px;
 `;
 
 export const RestaurantName = styled.Text`
@@ -15,19 +15,16 @@ export const RestaurantName = styled.Text`
 
 export const RatingText = styled.Text`
   font-family: 'Gotham-Light';
-  font-size: 11;
-  padding-left: 2;
+  font-size: 11px;
+  padding-left: 2px;
 `;
 
 export const DelayText = styled.Text`
   font-family: 'Gotham-Light';
-  font-size: 11;
+  font-size: 11px;
 `;
 
-export const ImageWrapper = styled.View`
-  display: flex;
-  flex-direction: column;
-`;
+export const ImageWrapper = styled.View``;
 
 export const InfoWrapper = styled.View`
   flex-direction: column;
@@ -62,10 +59,10 @@ export const Circle = styled.View`
   width: 30px;
   height: 30px;
   background-color: #06baa4;
-  border-radius: 30;
+  border-radius: 30px;
   position: absolute;
-  right: -5;
-  top: -5;
+  right: -5px;
+  top: -5px;
 `;
 
 export const DiscountWrapper = styled.View`
@@ -76,13 +73,13 @@ export const DiscountWrapper = styled.View`
 `;
 
 export const Percentaje = styled.Text`
-  font-size: 9;
+  font-size: 9px;
   color: white;
   font-family: 'GothamMedium';
 `;
 
 export const DiscountText = styled.Text`
   font-family: 'GothamMedium';
-  font-size: 7;
+  font-size: 7px;
   color: white;
 `;

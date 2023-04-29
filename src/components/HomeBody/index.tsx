@@ -21,7 +21,7 @@ const HomeBody = () => {
           <Carousel
             array={restaurants}
             ItemToRender={RestaurantItem}
-            title={t('Home.RestaurantTitle', 'Restaurantes')}
+            title={t('Home.RestaurantsTitle', 'Restaurantes')}
           />
           <Carousel
             array={categories}

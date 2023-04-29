@@ -2,8 +2,8 @@ import styled from 'styled-components/native';
 
 export const CarouselWrapper = styled.View`
   flex-direction: row;
-  padding-top: 38px;
   margin-left: 16px;
+  padding-bottom: 59px;
 `;
 
 export const Image = styled.ImageBackground`
@@ -39,4 +39,5 @@ export const CarouselHelper = styled.View`
 export const Title = styled.Text`
   font-family: 'GothamBold';
   text-transform: uppercase;
+  padding-bottom: 19px;
 `;
