@@ -8,7 +8,7 @@ const AddressButton = ({navigation}: any) => {
   const {t} = useTranslation();
 
   return (
-    <S.TouchableOpacity onPress={() => navigation.navigate('AddressScreen')}>
+    <S.TouchableOpacity onPress={() => navigation.navigate('Address')}>
       <AddressIcon />
       <S.Text>
         {t('Home.AddDeliveryAddress', 'Agregar dirección de entrega')}

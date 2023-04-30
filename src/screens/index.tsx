@@ -14,7 +14,7 @@ export const MainNavigation: React.FC = (): any => {
           headerShown: false,
         }}>
         <Stack.Screen name='Home' component={Home} />
-        <Stack.Screen name='AddressScreen' component={Address} />
+        <Stack.Screen name='Address' component={Address} />
       </Stack.Navigator>
     </NavigationContainer>
   );
