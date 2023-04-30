@@ -12,7 +12,7 @@ const Carousel = ({array, ItemToRender, title}: any) => {
           showsHorizontalScrollIndicator={false}
           data={array}
           renderItem={ItemToRender}
-          keyExtractor={item => item.name}
+          keyExtractor={item => item.id}
         />
       </S.CarouselHelper>
     </S.CarouselWrapper>

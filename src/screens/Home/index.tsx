@@ -19,7 +19,7 @@ import RestaurantItem from '../../components/RestaurantItem';
 import Carousel from '../../components/shared/Carousel/Carousel';
 import * as S from './style';
 
-const HomeBody = () => {
+const HomeBody = ({navigation}: any) => {
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const HomeBody = () => {
         <Header />
         <Hero />
       </S.ContainerView>
-      <AddressButton />
+      <AddressButton navigation={navigation} />
       <S.Container>
         <S.ScrollView showsVerticalScrollIndicator={false}>
           <S.CarouselsWrapper>
