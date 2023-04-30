@@ -1,11 +1,10 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
-import restaurants from '../../../mocks/restaurants';
+import {getRestaurants} from '../../../api/getRestaurant';
 
 export const fetchRestaurants = createAsyncThunk(
   'restaurants/getRestaurants',
   async () => {
-    const response = restaurants;
-
-    return response;
+    const response = await getRestaurants();
+    return response.data;
   },
 );

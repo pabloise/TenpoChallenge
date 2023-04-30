@@ -1,11 +1,11 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
-import favorites from '../../../mocks/favorites';
+import {getFavorites} from '../../../api/getFavorites';
 
 export const fetchFavorites = createAsyncThunk(
   'favorites/getFavorites',
   async () => {
-    const response = favorites;
+    const response = await getFavorites();
 
-    return response;
+    return response.data;
   },
 );

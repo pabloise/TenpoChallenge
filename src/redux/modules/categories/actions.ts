@@ -1,11 +1,10 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
-import categories from '../../../mocks/categories';
+import {getCategories} from '../../../api/getCategories';
 
 export const fetchCategories = createAsyncThunk(
   'categories/getCategories',
   async () => {
-    const response = categories;
-
-    return response;
+    const response = await getCategories();
+    return response.data;
   },
 );
