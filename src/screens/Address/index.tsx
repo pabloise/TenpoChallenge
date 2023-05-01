@@ -1,10 +1,11 @@
 import React, {useEffect} from 'react';
-import {Text, SafeAreaView, TouchableOpacity, TextInput} from 'react-native';
+import {Text, SafeAreaView, TouchableOpacity, ScrollView} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 
 import {AppDispatch} from '../../redux/store';
 import {selectAppPermissions} from '../../redux/modules/app/appSlice';
 import {readLocationPermissions} from '../../redux/modules/app/actions';
+import GoogleInput from '../../utils/GoogleInput';
 
 const Address = ({navigation}: any) => {
   const dispatch = useDispatch<AppDispatch>();
@@ -47,10 +48,12 @@ const Address = ({navigation}: any) => {
 
   return (
     <SafeAreaView>
-      <TouchableOpacity onPress={() => navigation.goBack()}>
-        <Text>VOLVER</Text>
-      </TouchableOpacity>
-      <TextInput style={{backgroundColor: 'yellow', padding: 20}} />
+      <ScrollView>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Text>VOLVER</Text>
+        </TouchableOpacity>
+        <GoogleInput />
+      </ScrollView>
     </SafeAreaView>
   );
 };
