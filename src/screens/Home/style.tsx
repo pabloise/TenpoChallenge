@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import {colors} from '../../theme/colors';
 
 export const StyledSafeAreaView = styled.SafeAreaView`
   background-color: #f2f2f2;
@@ -11,7 +10,7 @@ export const ContainerView = styled.View`
 `;
 
 export const Container = styled.View`
-  background-color: ${colors.green[100]};
+  background-color: #d4f9f5;
   flex: 1;
 `;
 

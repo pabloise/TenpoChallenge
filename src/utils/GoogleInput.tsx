@@ -1,7 +1,7 @@
 import React from 'react';
 import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
 
-const GoogleInput = ({setLat, setLng}: any) => {
+const GoogleInput = ({handleLocationSelected}: any) => {
   return (
     <GooglePlacesAutocomplete
       GooglePlacesDetailsQuery={{fields: 'geometry'}}
@@ -10,10 +10,12 @@ const GoogleInput = ({setLat, setLng}: any) => {
       listViewDisplayed='auto'
       fetchDetails={true}
       renderDescription={row => row.description}
-      onPress={(data, details) => {
-        setLat(details?.geometry?.location.lat);
-        setLng(details?.geometry?.location.lng);
-      }}
+      onPress={handleLocationSelected}
+      //   onPress={(data, details) => {
+      //     onPlaceSelected(details);
+      //     setLat(details?.geometry?.location.lat);
+      //     setLng(details?.geometry?.location.lng);
+      //   }}
       query={{
         type: 'geocode',
         key: 'AIzaSyC3n01VvB5qyKGHCX57KPxZrKdO_HyUwVQ',

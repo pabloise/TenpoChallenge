@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {
   Text,
   SafeAreaView,
@@ -12,13 +12,38 @@ import {AppDispatch} from '../../redux/store';
 import {selectAppPermissions} from '../../redux/modules/app/appSlice';
 import {readLocationPermissions} from '../../redux/modules/app/actions';
 import GoogleInput from '../../utils/GoogleInput';
-import {Marker, enableLatestRenderer} from 'react-native-maps';
-import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
+import {} from 'react-native-maps';
+import MapView, {
+  PROVIDER_GOOGLE,
+  Marker,
+  enableLatestRenderer,
+} from 'react-native-maps';
+
+import * as S from './styles';
+import AddressButton from '../../components/AddressButton';
 
 enableLatestRenderer();
 const Address = ({navigation}: any) => {
-  const [lat, setLat] = useState<any>();
-  const [lng, setLng] = useState<any>();
+  const [locationSelected, setLoactionSelected] = useState<any>(null);
+  const [region, setRegion] = useState<any>({
+    latitude: -32.9163154,
+    longitude: -60.681749,
+    latitudeDelta: 0.0922,
+    longitudeDelta: 0.0421,
+  });
+
+  const handleLoactionSelect = (
+    data: any,
+    details: {geometry: {location: {lat: any; lng: any}}},
+  ) => {
+    setRegion({
+      latitude: details.geometry.location.lat,
+      longitude: details.geometry.location.lng,
+      latitudeDelta: 0.0922,
+      longitudeDelta: 0.0421,
+    });
+    setLoactionSelected(details.geometry.location);
+  };
 
   const dispatch = useDispatch<AppDispatch>();
 
@@ -57,40 +82,31 @@ const Address = ({navigation}: any) => {
     //   });
   }, [dispatch]);
 
-  console.log('location: ', location);
-  console.log('Pepard lat', lat);
-  console.log('Pepardo lng', lng);
-
   return (
-    <SafeAreaView>
-      <ScrollView>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text>VOLVER</Text>
-        </TouchableOpacity>
-        <GoogleInput setLat={setLat} setLng={setLng} />
-        <View>
-          <MapView
-            style={{
-              height: 800,
-              width: 400,
-              justifyContent: 'flex-end',
-              alignItems: 'center',
-            }}
-            provider={PROVIDER_GOOGLE}
-            region={{
-              latitude: -32.9163154,
-              longitude: -60.681749,
-              latitudeDelta: 0.0922,
-              longitudeDelta: 0.0421,
-            }}>
+    <S.SafeAreaView>
+      <S.ScrollView>
+        <AddressButton />
+        <GoogleInput handleLocationSelected={handleLoactionSelect} />
+        <MapView
+          provider={PROVIDER_GOOGLE}
+          region={region}
+          style={{
+            height: 800,
+            width: 400,
+            justifyContent: 'flex-end',
+            alignItems: 'center',
+          }}>
+          {locationSelected && (
             <Marker
-              description='delivery person'
-              coordinate={{latitude: lat, longitude: lng}}
+              coordinate={{
+                latitude: locationSelected.lat,
+                longitude: locationSelected.lng,
+              }}
             />
-          </MapView>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+          )}
+        </MapView>
+      </S.ScrollView>
+    </S.SafeAreaView>
   );
 };
 
