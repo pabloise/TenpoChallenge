@@ -7,7 +7,7 @@ export const TouchableOpacity = styled.TouchableOpacity`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 22px 0px;
+  padding: 18px 0px;
   border-top-right-radius: 32px;
   border-top-left-radius: 32px;
   position: relative;
@@ -19,4 +19,22 @@ export const Text = styled.Text`
   font-family: 'Gotham-Light';
   font-size: 16px;
   color: ${colors.green[300]};
+`;
+export const AddressAvailableContainer = styled.View`
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+`;
+
+export const AddressAvailableTitle = styled.Text`
+  font-family: 'Gotham-Light';
+  color: ${colors.green[300]};
+  font-size: 10px;
+  padding-bottom: 3px;
+`;
+
+export const AddressAvailableText = styled.Text`
+  font-family: 'Gotham-Light';
+  color: ${colors.green[300]};
+  font-size: 14px;
 `;

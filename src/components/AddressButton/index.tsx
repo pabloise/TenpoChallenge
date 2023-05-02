@@ -1,5 +1,4 @@
 import React from 'react';
-import {Text} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {useNavigation} from '@react-navigation/native';
 import {useSelector} from 'react-redux';
@@ -17,11 +16,21 @@ const AddressButton = () => {
 
   return (
     <S.TouchableOpacity onPress={() => navigation.navigate('Address')}>
-      {userAddress?.description ? <Text>{userAddress.description}</Text> : null}
       <AddressIcon />
-      <S.Text>
-        {t('Home.AddDeliveryAddress', 'Agregar dirección de entrega')}
-      </S.Text>
+      {userAddress?.description ? (
+        <S.AddressAvailableContainer>
+          <S.AddressAvailableTitle>
+            Enviaremos tus pedidos a
+          </S.AddressAvailableTitle>
+          <S.AddressAvailableText>
+            {userAddress.description.substring(0, 35).concat('...')}
+          </S.AddressAvailableText>
+        </S.AddressAvailableContainer>
+      ) : (
+        <S.Text>
+          {t('Home.AddDeliveryAddress', 'Agregar dirección de entrega')}
+        </S.Text>
+      )}
     </S.TouchableOpacity>
   );
 };
