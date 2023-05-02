@@ -1,8 +1,10 @@
 import React from 'react';
 import {Platform, StyleSheet, TextStyle} from 'react-native';
 
-import StarImage from '../../assets/estrella.png';
 import {colors} from '../../theme/colors';
+import {Favorite} from '../../types';
+import StarImage from '../../assets/estrella.png';
+
 import * as S from './styles';
 
 const styles = StyleSheet.create({
@@ -26,11 +28,15 @@ const styles = StyleSheet.create({
   },
 });
 
-const FavoriteItem = ({item}: any) => {
+type Props = {
+  item: Favorite;
+};
+
+const FavoriteItem: React.FC<Props> = ({item}) => {
   return (
     <S.FavoriteWrapper style={styles.wrapper}>
       <S.FoodImage source={{uri: item.imageURL}} />
-      <S.RestaurantImage source={{uri: item.restaurant.imageURL}} />
+      <S.RestaurantImage source={{uri: item.restaurant.logoURL}} />
       <S.Card>
         <S.RatingWrapper>
           <S.FavoriteName>{item.nameES}</S.FavoriteName>

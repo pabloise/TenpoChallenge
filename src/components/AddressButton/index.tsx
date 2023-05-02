@@ -3,6 +3,7 @@ import {useTranslation} from 'react-i18next';
 import {useNavigation} from '@react-navigation/native';
 import {useSelector} from 'react-redux';
 
+import {selectUserAddress} from '../../redux/modules/user/userSlice';
 import {MainUseNavigationProps} from '../../types';
 
 import AddressIcon from '../../assets/AddressIcon.svg';
@@ -12,7 +13,7 @@ const AddressButton = () => {
   const {t} = useTranslation();
   const navigation = useNavigation<MainUseNavigationProps>();
 
-  const userAddress = useSelector((state: any) => state.user.address);
+  const userAddress = useSelector(selectUserAddress);
 
   return (
     <S.TouchableOpacity onPress={() => navigation.navigate('Address')}>
@@ -20,10 +21,10 @@ const AddressButton = () => {
       {userAddress?.description ? (
         <S.AddressAvailableContainer>
           <S.AddressAvailableTitle>
-            Enviaremos tus pedidos a
+            {t('Home.AddressTitle', 'Enviaremos tus pedidos a')}
           </S.AddressAvailableTitle>
-          <S.AddressAvailableText>
-            {userAddress.description.substring(0, 35).concat('...')}
+          <S.AddressAvailableText numberOfLines={1} ellipsizeMode='tail'>
+            {userAddress.description}
           </S.AddressAvailableText>
         </S.AddressAvailableContainer>
       ) : (

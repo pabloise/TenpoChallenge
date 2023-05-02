@@ -1,7 +1,13 @@
 import React from 'react';
+
+import {Category} from '../../types';
 import * as S from './styles';
 
-const CategoryItem = ({item}: any) => {
+type Props = {
+  item: Category;
+};
+
+const CategoryItem: React.FC<Props> = ({item}) => {
   return (
     <S.CategoriesWrapper>
       <S.Slide>

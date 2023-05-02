@@ -1,6 +1,7 @@
 {
   "Home": {
     "AddDeliveryAddress": "Add delivery address",
+    "AddressTitle": "We will deliver to",
     "RestaurantsTitle": "Restaurants",
     "CategoriesTitle": "Categories",
     "FavoritesTitle": "Your favorites"
@@ -13,5 +14,9 @@
       "Subtitle": "Apto, Office, Address Line 2, Block",
       "SubmitButton": "Add address"
     }
+  },
+  "RestaurantDetails": {
+    "Title": "Your nearby location",
+    "Details": "Restaurant details"
   }
 }

@@ -19,8 +19,9 @@ import FavoriteItem from '../../components/FavoriteItem';
 import Header from '../../components/Header';
 import Hero from '../../components/Hero';
 import Carousel from '../../components/shared/Carousel/Carousel';
-import {ScreenWrapper} from '../../components/ScreenWrapper';
 import RestaurantEmptyItem from '../../components/RestaurantEmptyItem';
+import {ScreenWrapper} from '../../components/ScreenWrapper';
+
 import * as S from './style';
 
 const HomeBody = () => {

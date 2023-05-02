@@ -1,4 +1,7 @@
-import type {StackNavigationProp} from '@react-navigation/stack';
+import type {
+  StackNavigationProp,
+  StackScreenProps,
+} from '@react-navigation/stack';
 import {Category} from './category';
 
 export type MainStackParamList = {
@@ -12,6 +15,13 @@ export type MainStackParamList = {
 };
 
 export type MainStackRoutes = keyof MainStackParamList;
+
+/**
+ * Use by passing the current stack screen name as a generic.
+ * e.g. NavProps<"Home">
+ */
+export type NavProps<ScreenName extends MainStackRoutes = 'RestaurantDetails'> =
+  StackScreenProps<MainStackParamList, ScreenName>;
 
 /**
  * For useNavigation hook - Use by passing the current stack screen name as a generic.

@@ -10,7 +10,7 @@ import RestaurantDetails from './RestaurantDetails';
 
 const Stack = createNativeStackNavigator();
 
-export const MainNavigation: React.FC = (): any => {
+export const MainNavigation: React.FC = () => {
   useAppInit();
 
   return (

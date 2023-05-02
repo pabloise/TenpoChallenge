@@ -2,15 +2,20 @@ import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {useSelector} from 'react-redux';
 
-import {selectAddress} from '../../redux/modules/user/userSlice';
-import {MainUseNavigationProps} from '../../types';
+import {selectUserAddress} from '../../redux/modules/user/userSlice';
+import {MainUseNavigationProps, Restaurant} from '../../types';
 
 import StarIcon from '../../assets/star.svg';
 import * as S from './styles';
 
-const RestaurantItem: React.FC<any> = ({item}) => {
+type Props = {
+  item: Restaurant;
+};
+
+const RestaurantItem: React.FC<Props> = ({item}) => {
   const navigation = useNavigation<MainUseNavigationProps>();
-  const userAddress = useSelector(selectAddress);
+  const userAddress = useSelector(selectUserAddress);
+
   const handleRestaurantPress = () =>
     navigation.navigate('RestaurantDetails', {
       name: item.name,
@@ -27,12 +32,12 @@ const RestaurantItem: React.FC<any> = ({item}) => {
         <S.Image source={{uri: item.logoURL}} />
         {item?.discount > 0 ? (
           <S.DiscountWrapper>
-            {item?.discount > 0 && (
+            {item?.discount > 0 ? (
               <>
                 <S.Percentaje>{item.discount}%</S.Percentaje>
                 <S.DiscountText>DCTO</S.DiscountText>
               </>
-            )}
+            ) : null}
           </S.DiscountWrapper>
         ) : null}
       </S.ImageWrapper>

@@ -1,8 +1,19 @@
 import React from 'react';
+import {FlatListProps} from 'react-native';
 
+import {Category, Favorite, Restaurant} from '../../../types';
 import * as S from './styles';
 
-const Carousel: React.FC<any> = ({
+type CarouselItems = Restaurant | Category | Favorite;
+
+type Props = {
+  array: CarouselItems[];
+  ItemToRender: React.FC<any>;
+  ListEmptyComponent?: FlatListProps<CarouselItems>['ListEmptyComponent'];
+  title: string;
+};
+
+const Carousel: React.FC<Props> = ({
   array,
   ItemToRender,
   ListEmptyComponent,

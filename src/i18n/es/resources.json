@@ -1,6 +1,7 @@
 {
   "Home": {
     "AddDeliveryAddress": "Agregar dirección de entrega",
+    "AddressTitle": "Enviaremos tus pedidos a",
     "RestaurantsTitle": "Restaurantes",
     "CategoriesTitle": "Categorías",
     "FavoritesTitle": "Tus favoritos"
@@ -13,5 +14,9 @@
       "Subtitle": "Depto, Oficina, Piso, Block",
       "SubmitButton": "Agregar dirección"
     }
+  },
+  "RestaurantDetails": {
+    "Title": "Tu ubicación cercana",
+    "Details": "Detalle de restaurante"
   }
 }

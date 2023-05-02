@@ -7,7 +7,7 @@ export const TouchableOpacity = styled.TouchableOpacity`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 18px 0px;
+  padding: 18px 20px;
   border-top-right-radius: 32px;
   border-top-left-radius: 32px;
   position: relative;
@@ -24,6 +24,8 @@ export const AddressAvailableContainer = styled.View`
   display: flex;
   flex-direction: column;
   padding-left: 10px;
+  flex: 1;
+  max-width: 280px;
 `;
 
 export const AddressAvailableTitle = styled.Text`
