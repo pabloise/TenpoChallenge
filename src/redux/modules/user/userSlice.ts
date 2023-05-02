@@ -26,6 +26,6 @@ export const userSlice = createSlice({
 
 export const {setAddress} = userSlice.actions;
 
-export const selectRestaurants = (state: RootState) => state.restaurants.data;
+export const selectAddress = (state: RootState) => state.user.address;
 
 export default userSlice.reducer;

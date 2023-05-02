@@ -1,9 +1,14 @@
 import type {StackNavigationProp} from '@react-navigation/stack';
+import {Category} from './category';
 
 export type MainStackParamList = {
   Home: undefined;
   Address: undefined;
-  RestaurantDetails: undefined;
+  RestaurantDetails: {
+    name: string;
+    image: string;
+    categories: Category[];
+  };
 };
 
 export type MainStackRoutes = keyof MainStackParamList;

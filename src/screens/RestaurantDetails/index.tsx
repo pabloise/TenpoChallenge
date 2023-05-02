@@ -1,19 +1,17 @@
 import React from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
+import {useSelector} from 'react-redux';
 
-import * as S from './styles';
+import SearchIcon from '../../assets/search-icon.svg';
+import ArrowIcon from '../../assets/LeftArrow.svg';
+
 import {ScreenWrapper} from '../../components/ScreenWrapper';
 import {colors} from '../../theme/colors';
-import ArrowIcon from '../../assets/LeftArrow.svg';
-import SearchIcon from '../../assets/search-icon.svg';
-import {useSelector} from 'react-redux';
-import {Category} from '../../types';
+import * as S from './styles';
 
 const RestaurantDetails: React.FC<any> = ({route, navigation}) => {
   const userAddress = useSelector((state: any) => state.user.address);
   const {name, image, categories} = route.params;
 
-  console.log('name image categories', name, image, categories);
   return (
     <ScreenWrapper background={`${colors.green[100]}`} bottomBgColor='#fff'>
       <S.Header>
@@ -42,7 +40,7 @@ const RestaurantDetails: React.FC<any> = ({route, navigation}) => {
         <S.RestaurantTitle>{name}</S.RestaurantTitle>
         <S.CategoriesContainer>
           {categories.map((item: any, index: number) => (
-            <S.Categories>
+            <S.Categories key={index}>
               {item.nameES}
               {index !== categories.length - 1 ? ' - ' : ''}
             </S.Categories>
