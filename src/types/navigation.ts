@@ -3,6 +3,7 @@ import type {StackNavigationProp} from '@react-navigation/stack';
 export type MainStackParamList = {
   Home: undefined;
   Address: undefined;
+  RestaurantDetails: undefined;
 };
 
 export type MainStackRoutes = keyof MainStackParamList;

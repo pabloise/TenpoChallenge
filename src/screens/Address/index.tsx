@@ -77,6 +77,12 @@ const Address = () => {
 
           setAskedLocation(true);
           setCurrentGEO(currentPosition);
+          setRegion({
+            latitude: currentPosition.lat,
+            longitude: currentPosition.lng,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          });
         },
         error => {
           setAskedLocation(true);
@@ -102,12 +108,12 @@ const Address = () => {
       };
 
       setRegion({
-        latitude: detail.geometry.location.lat,
-        longitude: detail.geometry.location.lng,
+        latitude: userLocation.geo.lat,
+        longitude: userLocation.geo.lng,
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
       });
-      setCurrentGEO(detail.geometry.location);
+      setCurrentGEO(userLocation.geo);
       setSelectedLocation(userLocation);
     }
   };
@@ -115,13 +121,15 @@ const Address = () => {
   const isLocationPermissionGranted = location === RESULTS.GRANTED;
 
   const renderMap = useCallback(() => {
-    return isLocationPermissionGranted || selectedLocation ? (
+    const geo = selectedLocation?.geo || currentGEO;
+    console.log('geo: ', geo);
+    return isLocationPermissionGranted || geo ? (
       <S.MapView provider={PROVIDER_GOOGLE} region={region}>
-        {selectedLocation && (
+        {geo && (
           <Marker
             coordinate={{
-              latitude: selectedLocation.geo.lat,
-              longitude: selectedLocation.geo.lng,
+              latitude: geo.lat,
+              longitude: geo.lng,
             }}
             image={CustomMarker}
           />
@@ -130,7 +138,7 @@ const Address = () => {
     ) : (
       <S.NoMapView />
     );
-  }, [isLocationPermissionGranted, selectedLocation, region]);
+  }, [isLocationPermissionGranted, selectedLocation, currentGEO, region]);
 
   const handleAddressSubmit = () => {
     dispatch(setAddress(selectedLocation));

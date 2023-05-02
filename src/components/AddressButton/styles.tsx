@@ -28,7 +28,7 @@ export const AddressAvailableContainer = styled.View`
 
 export const AddressAvailableTitle = styled.Text`
   font-family: 'Gotham-Light';
-  color: ${colors.green[300]};
+  color: ${colors.green[400]};
   font-size: 10px;
   padding-bottom: 3px;
 `;

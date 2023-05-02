@@ -1,10 +1,21 @@
 import React from 'react';
-import * as S from './styles';
-import StarIcon from '../../assets/star.svg';
+import {useNavigation} from '@react-navigation/native';
 
-const RestaurantItem = ({item}: any) => {
+import {MainUseNavigationProps} from '../../types';
+import StarIcon from '../../assets/star.svg';
+import * as S from './styles';
+
+const RestaurantItem: React.FC<any> = ({item}) => {
+  const navigation = useNavigation<any>();
+  const handleRestaurantPress = () =>
+    navigation.navigate('RestaurantDetails', {
+      name: item.name,
+      image: item.logoURL,
+      categories: item.categories,
+    });
+
   return (
-    <S.RestaurantItemWrapper>
+    <S.RestaurantItemWrapper onPress={handleRestaurantPress}>
       <S.ImageWrapper>
         <S.Image source={{uri: item.logoURL}} />
         {item?.discount > 0 ? (

@@ -6,6 +6,7 @@ import useAppInit from '../hooks/useAppInit';
 
 import Home from './Home';
 import Address from './Address';
+import RestaurantDetails from './RestaurantDetails';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +21,7 @@ export const MainNavigation: React.FC = (): any => {
         }}>
         <Stack.Screen name='Home' component={Home} />
         <Stack.Screen name='Address' component={Address} />
+        <Stack.Screen name='RestaurantDetails' component={RestaurantDetails} />
       </Stack.Navigator>
     </NavigationContainer>
   );

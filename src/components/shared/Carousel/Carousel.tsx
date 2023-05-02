@@ -11,7 +11,7 @@ const Carousel: React.FC<any> = ({array, ItemToRender, title}) => {
           horizontal
           showsHorizontalScrollIndicator={false}
           data={array}
-          renderItem={ItemToRender}
+          renderItem={({item}) => <ItemToRender item={item} />}
           keyExtractor={item => String((item as any).id)}
         />
       </S.CarouselHelper>
