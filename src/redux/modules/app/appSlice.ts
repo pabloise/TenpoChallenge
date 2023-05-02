@@ -54,5 +54,7 @@ export const appSlice = createSlice({
 });
 
 export const selectAppPermissions = (state: RootState) => state.app.permissions;
+export const selectAppInitializing = (state: RootState) =>
+  state.app.initializing;
 
 export default appSlice.reducer;

@@ -122,7 +122,7 @@ const Address = () => {
 
   const renderMap = useCallback(() => {
     const geo = selectedLocation?.geo || currentGEO;
-    console.log('geo: ', geo);
+
     return isLocationPermissionGranted || geo ? (
       <S.MapView provider={PROVIDER_GOOGLE} region={region}>
         {geo && (
