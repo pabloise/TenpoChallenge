@@ -7,15 +7,16 @@ const RestaurantItem = ({item}: any) => {
     <S.RestaurantItemWrapper>
       <S.ImageWrapper>
         <S.Image source={{uri: item.logoURL}} />
-        {item?.discount > 0 && <S.Circle></S.Circle>}
-        <S.DiscountWrapper>
-          {item?.discount > 0 && (
-            <>
-              <S.Percentaje>{item.discount}%</S.Percentaje>
-              <S.DiscountText>DCTO</S.DiscountText>
-            </>
-          )}
-        </S.DiscountWrapper>
+        {item?.discount > 0 ? (
+          <S.DiscountWrapper>
+            {item?.discount > 0 && (
+              <>
+                <S.Percentaje>{item.discount}%</S.Percentaje>
+                <S.DiscountText>DCTO</S.DiscountText>
+              </>
+            )}
+          </S.DiscountWrapper>
+        ) : null}
       </S.ImageWrapper>
       <S.InfoWrapper>
         <S.RestaurantName>{item.name}</S.RestaurantName>

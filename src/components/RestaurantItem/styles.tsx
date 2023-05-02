@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import {colors} from '../../theme/colors';
 
 export const RestaurantItemWrapper = styled.TouchableOpacity`
   width: 105px;
@@ -52,34 +53,29 @@ export const Image = styled.Image`
   width: 105px;
   height: 105px;
   position: relative;
-  border-radius: 5px;
+  border-radius: 14px;
 `;
 
-export const Circle = styled.View`
+export const DiscountWrapper = styled.View`
   width: 30px;
   height: 30px;
-  background-color: #06baa4;
+  background-color: ${colors.green[200]};
   border-radius: 30px;
   position: absolute;
+  align-items: center;
+  justify-content: center;
   right: -5px;
   top: -5px;
 `;
 
-export const DiscountWrapper = styled.View`
-  align-items: center;
-  position: absolute;
-  right: -1;
-  top: 2.5px;
-`;
-
 export const Percentaje = styled.Text`
   font-size: 9px;
-  color: white;
+  color: ${colors.white};
   font-family: 'GothamMedium';
 `;
 
 export const DiscountText = styled.Text`
   font-family: 'GothamMedium';
   font-size: 7px;
-  color: white;
+  color: ${colors.white};
 `;
