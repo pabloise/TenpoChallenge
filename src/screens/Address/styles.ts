@@ -11,11 +11,12 @@ export const ButtonContainer = styled.View`
 
 export const MapContainer = styled.View`
   position: relative;
+  z-index: 8;
 `;
 
 export const MapView = styled(MapViewComponent)`
   height: 300px;
-  width: ${Dimensions.get('window').width};
+  width: ${Dimensions.get('window').width}px;
   justify-content: flex-end;
   align-items: center;
 `;
@@ -33,4 +34,5 @@ export const WaitingLocationText = styled.Text`
 export const FormWrapper = styled.View`
   background-color: ${colors.white};
   flex: 1;
+  z-index: 5;
 `;
