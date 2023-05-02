@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import {colors} from '../../theme/colors';
 
 export const CategoriesWrapper = styled.View`
   align-items: flex-start;
@@ -15,18 +16,17 @@ export const Slide = styled.TouchableOpacity`
   height: 65px;
   border-radius: 8px;
   overflow: hidden;
-  border-radius: 6px;
 `;
 
 export const Opacity = styled.View`
-  background-color: #00000048;
+  background-color: ${colors.blackOpacity};
   justify-content: center;
   align-items: center;
   flex: 1;
 `;
 
 export const Text = styled.Text`
-  color: white;
+  color: ${colors.white};
   font-family: 'GothamUltra';
   font-size: 10px;
   letter-spacing: 3px;

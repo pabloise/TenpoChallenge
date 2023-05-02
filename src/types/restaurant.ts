@@ -1,8 +1,8 @@
 import {Category} from './category';
 
-interface GEO {
-  lat: string;
-  lng: string;
+export interface GEO {
+  lat: number;
+  lng: number;
 }
 
 export interface BaseRestaurant {

@@ -4,5 +4,14 @@
     "RestaurantsTitle": "Restaurantes",
     "CategoriesTitle": "Categorías",
     "FavoritesTitle": "Tus favoritos"
+  },
+  "Address": {
+    "WaitingLocation": "Esperando tu ubicación...",
+    "AddresInputPlaceholder": "Escribe tu dirección",
+    "Form": {
+      "Title": "Agregar información de entrega",
+      "Subtitle": "Depto, Oficina, Piso, Block",
+      "SubmitButton": "Agregar dirección"
+    }
   }
 }

@@ -1,7 +1,8 @@
 import styled from 'styled-components/native';
+import {colors} from '../../theme/colors';
 
 export const TouchableOpacity = styled.TouchableOpacity`
-  background-color: #d4f9f5;
+  background-color: ${colors.green[100]};
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -17,5 +18,5 @@ export const Text = styled.Text`
   padding-left: 10px;
   font-family: 'Gotham-Light';
   font-size: 16px;
-  color: #028f7f;
+  color: ${colors.green[300]};
 `;

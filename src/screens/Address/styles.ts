@@ -1,16 +1,36 @@
 import styled from 'styled-components/native';
+import {Dimensions} from 'react-native';
+import MapViewComponent from 'react-native-maps';
 
-export const SafeAreaView = styled.SafeAreaView`
-  background-color: #d4f9f5;
-`;
+import {colors} from '../../theme/colors';
 
 export const ButtonContainer = styled.View`
-  padding-top: 20px;
-  padding-bottom: 16px;
+  padding-top: 24px;
+  padding-bottom: 28px;
 `;
 
 export const MapContainer = styled.View`
   position: relative;
 `;
 
-export const TouchableOpacity = styled.TouchableOpacity``;
+export const MapView = styled(MapViewComponent)`
+  height: 300px;
+  width: ${Dimensions.get('window').width};
+  justify-content: flex-end;
+  align-items: center;
+`;
+
+export const NoMapView = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const WaitingLocationText = styled.Text`
+  color: ${colors.gray[400]};
+`;
+
+export const FormWrapper = styled.View`
+  background-color: ${colors.white};
+  flex: 1;
+`;

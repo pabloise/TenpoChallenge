@@ -4,5 +4,14 @@
     "RestaurantsTitle": "Restaurants",
     "CategoriesTitle": "Categories",
     "FavoritesTitle": "Your favorites"
+  },
+  "Address": {
+    "WaitingLocation": "Waiting your location...",
+    "AddresInputPlaceholder": "Type your address",
+    "Form": {
+      "Title": "Add delivery information",
+      "Subtitle": "Apto, Office, Address Line 2, Block",
+      "SubmitButton": "Add address"
+    }
   }
 }
