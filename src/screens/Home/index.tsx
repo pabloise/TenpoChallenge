@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
-import {RefreshControl} from 'react-native';
+import {ActivityIndicator, RefreshControl} from 'react-native';
 import {useTranslation} from 'react-i18next';
 
 import {selectCategories} from '../../redux/modules/categories/categoriesSlice';
@@ -20,8 +20,8 @@ import Header from '../../components/Header';
 import Hero from '../../components/Hero';
 import Carousel from '../../components/shared/Carousel/Carousel';
 import {ScreenWrapper} from '../../components/ScreenWrapper';
-import * as S from './style';
 import RestaurantEmptyItem from '../../components/RestaurantEmptyItem';
+import * as S from './style';
 
 const HomeBody = () => {
   const {t} = useTranslation();
@@ -52,22 +52,28 @@ const HomeBody = () => {
           }
           showsVerticalScrollIndicator={false}>
           <S.CarouselsWrapper>
-            <Carousel
-              array={restaurants}
-              ItemToRender={RestaurantItem}
-              title={t('Home.RestaurantsTitle', 'Restaurantes')}
-              ListEmptyComponent={RestaurantEmptyItem}
-            />
-            <Carousel
-              array={categories}
-              ItemToRender={CategoryItem}
-              title={t('Home.CategoriesTitle', 'Categorías')}
-            />
-            <Carousel
-              array={favorites}
-              ItemToRender={FavoriteItem}
-              title={t('Home.FavoritesTitle', 'Tus favoritos')}
-            />
+            {initializing && !favorites.length ? (
+              <ActivityIndicator color={colors.green[300]} />
+            ) : (
+              <>
+                <Carousel
+                  array={restaurants}
+                  ItemToRender={RestaurantItem}
+                  title={t('Home.RestaurantsTitle', 'Restaurantes')}
+                  ListEmptyComponent={RestaurantEmptyItem}
+                />
+                <Carousel
+                  array={categories}
+                  ItemToRender={CategoryItem}
+                  title={t('Home.CategoriesTitle', 'Categorías')}
+                />
+                <Carousel
+                  array={favorites}
+                  ItemToRender={FavoriteItem}
+                  title={t('Home.FavoritesTitle', 'Tus favoritos')}
+                />
+              </>
+            )}
           </S.CarouselsWrapper>
         </S.ScrollView>
       </S.Container>
