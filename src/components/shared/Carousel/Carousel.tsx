@@ -1,18 +1,18 @@
 import React from 'react';
-import {FlatList} from 'react-native';
-import * as S from './style';
 
-const Carousel = ({array, ItemToRender, title}: any) => {
+import * as S from './styles';
+
+const Carousel: React.FC<any> = ({array, ItemToRender, title}) => {
   return (
     <S.CarouselWrapper>
       <S.CarouselHelper>
         <S.Title>{title}</S.Title>
-        <FlatList
+        <S.FlatList
           horizontal
           showsHorizontalScrollIndicator={false}
           data={array}
           renderItem={ItemToRender}
-          keyExtractor={item => item.id}
+          keyExtractor={item => String((item as any).id)}
         />
       </S.CarouselHelper>
     </S.CarouselWrapper>

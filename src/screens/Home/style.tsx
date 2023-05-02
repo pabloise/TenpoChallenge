@@ -1,21 +1,17 @@
 import styled from 'styled-components/native';
-
-export const StyledSafeAreaView = styled.SafeAreaView`
-  background-color: #f2f2f2;
-  flex: 1;
-`;
+import {colors} from '../../theme/colors';
 
 export const ContainerView = styled.View`
   padding: 0px 15px 0px 16px;
 `;
 
 export const Container = styled.View`
-  background-color: #d4f9f5;
+  background-color: ${colors.green[100]};
   flex: 1;
 `;
 
 export const ScrollView = styled.ScrollView`
-  background-color: white;
+  background-color: ${colors.white};
   border-top-right-radius: 32px;
   border-top-left-radius: 32px;
 `;

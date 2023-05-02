@@ -1,19 +1,21 @@
 import styled from 'styled-components/native';
+import {colors} from '../../theme/colors';
 
 export const FavoriteWrapper = styled.TouchableOpacity`
   align-items: center;
   width: 250px;
   margin-right: 15px;
+  margin-bottom: 10px;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
 `;
 
 export const Card = styled.View`
   width: 250px;
   padding: 10px 5px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 6px;
   border-width: 0.2px;
-  border-radius: 2px;
-  border-color: #ddd;
+  border-color: ${colors.gray[300]};
   border-bottom-width: 0.2px;
 `;
 
@@ -71,7 +73,7 @@ export const ProductInfo = styled.View`
 
 export const RestoTitle = styled.Text`
   font-family: 'GothamBold';
-  color: #06baa4;
+  color: ${colors.green[200]};
 `;
 
 export const Text = styled.Text`

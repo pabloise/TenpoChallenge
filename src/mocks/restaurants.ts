@@ -11,8 +11,8 @@ const restaurants: Restaurant[] = [
       'https://tenpo-app-challenge.s3.us-east-2.amazonaws.com/images/restaurants/1-nuevo-logo-mc-logo.jpg',
     discount: 25,
     geo: {
-      lat: '-32.9309593',
-      lng: '-60.6758936',
+      lat: -32.9309593,
+      lng: -60.6758936,
     },
     categories: [
       {
@@ -34,8 +34,8 @@ const restaurants: Restaurant[] = [
       'https://tenpo-app-challenge.s3.us-east-2.amazonaws.com/images/restaurants/2-the-bronx-street-food.png',
     discount: 20,
     geo: {
-      lat: '-32.9302191',
-      lng: '-60.6908196',
+      lat: -32.9302191,
+      lng: -60.6908196,
     },
     categories: [
       {
@@ -71,8 +71,8 @@ const restaurants: Restaurant[] = [
       'https://tenpo-app-challenge.s3.us-east-2.amazonaws.com/images/restaurants/3-pitsa-logo.jpg',
     discount: 40,
     geo: {
-      lat: '-32.9311993',
-      lng: '-60.6813069',
+      lat: -32.9311993,
+      lng: -60.6813069,
     },
     categories: [
       {
@@ -101,8 +101,8 @@ const restaurants: Restaurant[] = [
       'https://tenpo-app-challenge.s3.us-east-2.amazonaws.com/images/restaurants/4-john-s-burgers-centro.jpg',
     discount: 30,
     geo: {
-      lat: '-32.9311993',
-      lng: '-60.6813069',
+      lat: -32.9311993,
+      lng: -60.6813069,
     },
     categories: [
       {
@@ -124,8 +124,8 @@ const restaurants: Restaurant[] = [
       'https://tenpo-app-challenge.s3.us-east-2.amazonaws.com/images/restaurants/5-jimmy-logo.jpg',
     discount: 0,
     geo: {
-      lat: '-32.9311993',
-      lng: '-60.6813069',
+      lat: -32.9311993,
+      lng: -60.6813069,
     },
     categories: [
       {
@@ -154,8 +154,8 @@ const restaurants: Restaurant[] = [
       'https://tenpo-app-challenge.s3.us-east-2.amazonaws.com/images/restaurants/6-placeres-vinos-y-algo-mas.jpg',
     discount: 50,
     geo: {
-      lat: '-32.9296144',
-      lng: '-60.6849547',
+      lat: -32.9296144,
+      lng: -60.6849547,
     },
     categories: [
       {
@@ -184,8 +184,8 @@ const restaurants: Restaurant[] = [
       'https://tenpo-app-challenge.s3.us-east-2.amazonaws.com/images/restaurants/7-el-club-de-la-milanesa.jpg',
     discount: 20,
     geo: {
-      lat: '-32.9296144',
-      lng: '-60.6920787',
+      lat: -32.9296144,
+      lng: -60.6920787,
     },
     categories: [
       {
@@ -214,8 +214,8 @@ const restaurants: Restaurant[] = [
       'https://tenpo-app-challenge.s3.us-east-2.amazonaws.com/images/restaurants/8-marbet-helados-gourmet.jpg',
     discount: 10,
     geo: {
-      lat: '-32.930659',
-      lng: '-60.7007905',
+      lat: -32.930659,
+      lng: -60.7007905,
     },
     categories: [
       {

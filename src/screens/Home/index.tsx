@@ -6,6 +6,8 @@ import {selectCategories} from '../../redux/modules/categories/categoriesSlice';
 import {selectFavorites} from '../../redux/modules/favorites/favoritesSlice';
 import {selectRestaurants} from '../../redux/modules/restaurants/restaurantsSlice';
 
+import {colors} from '../../theme/colors';
+
 import AddressButton from '../../components/AddressButton';
 import RestaurantItem from '../../components/RestaurantItem';
 import CategoryItem from '../../components/CategoryItem';
@@ -13,6 +15,7 @@ import FavoriteItem from '../../components/FavoriteItem';
 import Header from '../../components/Header';
 import Hero from '../../components/Hero';
 import Carousel from '../../components/shared/Carousel/Carousel';
+import {ScreenWrapper} from '../../components/ScreenWrapper';
 import * as S from './style';
 
 const HomeBody = ({navigation}: any) => {
@@ -23,7 +26,7 @@ const HomeBody = ({navigation}: any) => {
   const favorites = useSelector(selectFavorites);
 
   return (
-    <S.StyledSafeAreaView>
+    <ScreenWrapper background={colors.gray[200]} bottomBgColor={colors.white}>
       <S.ContainerView>
         <Header />
         <Hero />
@@ -50,7 +53,7 @@ const HomeBody = ({navigation}: any) => {
           </S.CarouselsWrapper>
         </S.ScrollView>
       </S.Container>
-    </S.StyledSafeAreaView>
+    </ScreenWrapper>
   );
 };
 
