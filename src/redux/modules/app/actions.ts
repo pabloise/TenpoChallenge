@@ -1,17 +1,27 @@
-import {Platform} from 'react-native';
 import {createAsyncThunk} from '@reduxjs/toolkit';
-import {PERMISSIONS, request} from 'react-native-permissions';
+import {fetchCategories} from '../categories/actions';
+import {fetchFavorites} from '../favorites/actions';
+import {fetchRestaurants} from '../restaurants/actions';
+import {checkLocation, requestLocation} from '../../../utils';
 
-export const readLocationPermissions = createAsyncThunk(
-  'app/readLocationPermissions',
-  async () => {
-    const LOCATION_PERMISSION =
-      Platform.OS === 'ios'
-        ? PERMISSIONS.IOS.LOCATION_ALWAYS
-        : PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION;
-    console.log('LOCATION_PERMISSION: ', LOCATION_PERMISSION);
-    const response = await request(LOCATION_PERMISSION);
-    console.log('response: ', response);
-    return response;
+export const checkLocationPermissions = createAsyncThunk(
+  'app/checkLocationPermissions',
+  async () => await checkLocation(),
+);
+
+export const requestLocationPermissions = createAsyncThunk(
+  'app/requestLocationPermissions',
+  async () => await requestLocation(),
+);
+
+export const initialize = createAsyncThunk(
+  'app/initialize',
+  async (_, {dispatch}) => {
+    await Promise.all([
+      dispatch(fetchRestaurants()),
+      dispatch(fetchCategories()),
+      dispatch(fetchFavorites()),
+      dispatch(checkLocationPermissions()),
+    ]);
   },
 );

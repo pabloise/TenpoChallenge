@@ -14,6 +14,8 @@ import RNLanguageDetector from '@os-team/i18next-react-native-language-detector'
 
 const fallbackLanguage = 'en';
 
+navigator.geolocation = require('react-native-geolocation-service');
+
 i18n
   .use(RNLanguageDetector)
   .use(initReactI18next)

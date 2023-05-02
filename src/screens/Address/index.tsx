@@ -1,29 +1,27 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {
-  Text,
-  SafeAreaView,
-  TouchableOpacity,
-  ScrollView,
-  View,
-} from 'react-native';
-import {useDispatch, useSelector} from 'react-redux';
-
-import {AppDispatch} from '../../redux/store';
-import {selectAppPermissions} from '../../redux/modules/app/appSlice';
-import {readLocationPermissions} from '../../redux/modules/app/actions';
-import GoogleInput from '../../utils/GoogleInput';
-import {} from 'react-native-maps';
+import React, {useEffect, useState} from 'react';
+import {useSelector} from 'react-redux';
+import {RESULTS} from 'react-native-permissions';
 import MapView, {
   PROVIDER_GOOGLE,
   Marker,
   enableLatestRenderer,
 } from 'react-native-maps';
+import Geolocation from 'react-native-geolocation-service';
 
-import * as S from './styles';
+import {selectAppPermissions} from '../../redux/modules/app/appSlice';
+import {requestLocationPermissions} from '../../redux/modules/app/actions';
+
+import GoogleInput from '../../components/GoogleInput/GoogleInput';
+import {useAppDispatch} from '../../hooks/useAppDispatch';
+
 import AddressButton from '../../components/AddressButton';
+import * as S from './styles';
+import TextArea from '../../components/TextArea';
 
 enableLatestRenderer();
-const Address = ({navigation}: any) => {
+const Address = () => {
+  const dispatch = useAppDispatch();
+  const {location} = useSelector(selectAppPermissions);
   const [locationSelected, setLoactionSelected] = useState<any>(null);
   const [region, setRegion] = useState<any>({
     latitude: -32.9163154,
@@ -32,10 +30,46 @@ const Address = ({navigation}: any) => {
     longitudeDelta: 0.0421,
   });
 
+  useEffect(() => {
+    const canRequestLocationPermissions = location === RESULTS.DENIED;
+
+    if (canRequestLocationPermissions) {
+      dispatch(requestLocationPermissions());
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    const hasLocationPermissionsGranted = location === RESULTS.GRANTED;
+
+    if (hasLocationPermissionsGranted) {
+      Geolocation.getCurrentPosition(
+        pos => {
+          console.log('pos', pos);
+          const currentPosition = {
+            lat: pos.coords.latitude,
+            lng: pos.coords.longitude,
+          };
+
+          setLoactionSelected(currentPosition);
+        },
+        error => {
+          //See error code charts below
+          console.log(error.code, error.message);
+        },
+        {enableHighAccuracy: true, timeout: 15000, maximumAge: 10000},
+      );
+    }
+  }, [location]);
+
   const handleLoactionSelect = (
     data: any,
     details: {geometry: {location: {lat: any; lng: any}}},
   ) => {
+    console.log('selected location: ', {
+      data,
+      details,
+    });
     setRegion({
       latitude: details.geometry.location.lat,
       longitude: details.geometry.location.lng,
@@ -45,56 +79,24 @@ const Address = ({navigation}: any) => {
     setLoactionSelected(details.geometry.location);
   };
 
-  const dispatch = useDispatch<AppDispatch>();
-
-  const {location} = useSelector(selectAppPermissions);
-  useEffect(() => {
-    dispatch(readLocationPermissions());
-    // check(LOCATION_PERMISSION)
-    //   .then(result => {
-    //     switch (result) {
-    //       case RESULTS.UNAVAILABLE:
-    //         console.log(
-    //           'This feature is not available (on this device / in this context)',
-    //         );
-    //         break;
-    //       case RESULTS.DENIED:
-    //         request(LOCATION_PERMISSION);
-    //         console.log(
-    //           'The permission has not been requested / is denied but requestable',
-    //         );
-    //         break;
-    //       case RESULTS.LIMITED:
-    //         request(LOCATION_PERMISSION);
-    //         console.log('The permission is limited: some actions are possible');
-    //         break;
-    //       case RESULTS.GRANTED:
-    //         console.log('The permission is granted');
-    //         break;
-    //       case RESULTS.BLOCKED:
-    //         console.log('The permission is denied and not requestable anymore');
-    //         break;
-    //     }
-    //   })
-    //   .catch(error => {
-    //     console.log('error: ', error);
-    //     // …
-    //   });
-  }, [dispatch]);
+  const isLocationPermissionGranted = location === RESULTS.GRANTED;
+  console.log('data', {isLocationPermissionGranted});
 
   return (
     <S.SafeAreaView>
-      <S.ScrollView>
+      <S.ButtonContainer>
         <AddressButton />
-        <GoogleInput handleLocationSelected={handleLoactionSelect} />
+      </S.ButtonContainer>
+      <S.MapContainer>
         <MapView
           provider={PROVIDER_GOOGLE}
           region={region}
           style={{
-            height: 800,
+            height: 300,
             width: 400,
             justifyContent: 'flex-end',
             alignItems: 'center',
+            zIndex: 2,
           }}>
           {locationSelected && (
             <Marker
@@ -102,10 +104,13 @@ const Address = ({navigation}: any) => {
                 latitude: locationSelected.lat,
                 longitude: locationSelected.lng,
               }}
+              image={require('../../assets/marker.png')}
             />
           )}
         </MapView>
-      </S.ScrollView>
+        <GoogleInput handleLocationSelected={handleLoactionSelect} />
+      </S.MapContainer>
+      <TextArea />
     </S.SafeAreaView>
   );
 };

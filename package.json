@@ -13,7 +13,8 @@
     "postinstall": "react-native setup-ios-permissions && pod-install"
   },
   "reactNativePermissionsIOS": [
-    "LocationAlways"
+    "LocationAlways",
+    "LocationWhenInUse"
   ],
   "dependencies": {
     "@os-team/i18next-react-native-language-detector": "^1.0.23",
@@ -28,6 +29,7 @@
     "react": "18.2.0",
     "react-i18next": "^12.2.2",
     "react-native": "0.71.7",
+    "react-native-geolocation-service": "^5.3.1",
     "react-native-gesture-handler": "^2.9.0",
     "react-native-google-places-autocomplete": "^2.5.1",
     "react-native-maps": "^1.7.1",
