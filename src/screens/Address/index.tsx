@@ -8,13 +8,15 @@ import {
   Region,
 } from 'react-native-maps';
 import Geolocation from 'react-native-geolocation-service';
+import {useNavigation} from '@react-navigation/native';
 import {useTranslation} from 'react-i18next';
 
 import {selectAppPermissions} from '../../redux/modules/app/appSlice';
 import {requestLocationPermissions} from '../../redux/modules/app/actions';
+import {setAddress} from '../../redux/modules/user/userSlice';
 import {useAppDispatch} from '../../hooks/useAppDispatch';
 
-import {GEO, PermissionResult} from '../../types';
+import {Address as AddressType, GEO, PermissionResult} from '../../types';
 import {colors} from '../../theme/colors';
 
 import AddressButton from '../../components/AddressButton';
@@ -38,9 +40,13 @@ enableLatestRenderer();
 const Address = () => {
   const dispatch = useAppDispatch();
   const {t} = useTranslation();
+  const navigation = useNavigation();
 
   const {location} = useSelector(selectAppPermissions);
-  const [selectedLocation, setSelectedLocation] = useState<GEO | null>(null);
+  const [currentGEO, setCurrentGEO] = useState<GEO | undefined>();
+  const [selectedLocation, setSelectedLocation] = useState<
+    AddressType | undefined
+  >();
   const [askedLocation, setAskedLocation] = useState(false);
   const [region, setRegion] = useState<Region | undefined>(defaultRegion);
 
@@ -70,7 +76,7 @@ const Address = () => {
           };
 
           setAskedLocation(true);
-          setSelectedLocation(currentPosition);
+          setCurrentGEO(currentPosition);
         },
         error => {
           setAskedLocation(true);
@@ -89,32 +95,33 @@ const Address = () => {
     data,
     detail,
   ) => {
-    console.log('selected location: ', {
-      data,
-      detail,
-    });
-
     if (detail) {
+      const userLocation = {
+        description: data.description,
+        geo: detail.geometry.location,
+      };
+
       setRegion({
         latitude: detail.geometry.location.lat,
         longitude: detail.geometry.location.lng,
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
       });
-      setSelectedLocation(detail.geometry.location);
+      setCurrentGEO(detail.geometry.location);
+      setSelectedLocation(userLocation);
     }
   };
 
   const isLocationPermissionGranted = location === RESULTS.GRANTED;
 
   const renderMap = useCallback(() => {
-    return isLocationPermissionGranted ? (
+    return isLocationPermissionGranted || selectedLocation ? (
       <S.MapView provider={PROVIDER_GOOGLE} region={region}>
         {selectedLocation && (
           <Marker
             coordinate={{
-              latitude: selectedLocation.lat,
-              longitude: selectedLocation.lng,
+              latitude: selectedLocation.geo.lat,
+              longitude: selectedLocation.geo.lng,
             }}
             image={CustomMarker}
           />
@@ -124,6 +131,11 @@ const Address = () => {
       <S.NoMapView />
     );
   }, [isLocationPermissionGranted, selectedLocation, region]);
+
+  const handleAddressSubmit = () => {
+    dispatch(setAddress(selectedLocation));
+    navigation.goBack();
+  };
 
   return (
     <ScreenWrapper background={colors.green[100]} bottomBgColor={colors.white}>
@@ -141,13 +153,15 @@ const Address = () => {
           </S.NoMapView>
         )}
         <GoogleInput
-          selected={!!selectedLocation}
+          selected={!!currentGEO}
           onLocationSelect={handleLocationSelect}
           onPressClear={() => {}}
         />
       </S.MapContainer>
       <S.FormWrapper>
-        {selectedLocation ? <DeliveryInfo /> : null}
+        {selectedLocation ? (
+          <DeliveryInfo onSubmit={handleAddressSubmit} />
+        ) : null}
       </S.FormWrapper>
     </ScreenWrapper>
   );

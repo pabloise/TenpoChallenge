@@ -3,7 +3,11 @@ import {useTranslation} from 'react-i18next';
 
 import * as S from './styles';
 
-const DeliveryInfo = () => {
+type Props = {
+  onSubmit: () => void;
+};
+
+const DeliveryInfo: React.FC<Props> = ({onSubmit}) => {
   const {t} = useTranslation();
 
   return (
@@ -15,7 +19,7 @@ const DeliveryInfo = () => {
         {t('Address.Form.Subtitle', 'Depto, Oficina, Piso, Block.')}
       </S.Subtitle>
       <S.TextAreaElement multiline={true} numberOfLines={4} />
-      <S.ButtonContainer>
+      <S.ButtonContainer onPress={onSubmit}>
         <S.ButtonText>
           {t('Address.Form.SubmitButton', 'Agregar dirección')}
         </S.ButtonText>

@@ -18,7 +18,7 @@ import Carousel from '../../components/shared/Carousel/Carousel';
 import {ScreenWrapper} from '../../components/ScreenWrapper';
 import * as S from './style';
 
-const HomeBody = ({navigation}: any) => {
+const HomeBody = () => {
   const {t} = useTranslation();
 
   const restaurants = useSelector(selectRestaurants);
@@ -31,7 +31,7 @@ const HomeBody = ({navigation}: any) => {
         <Header />
         <Hero />
       </S.ContainerView>
-      <AddressButton navigation={navigation} />
+      <AddressButton />
       <S.Container>
         <S.ScrollView showsVerticalScrollIndicator={false}>
           <S.CarouselsWrapper>
