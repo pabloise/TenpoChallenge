@@ -7,6 +7,7 @@ export const RestaurantItemWrapper = styled.TouchableOpacity`
   display: flex;
   flex-direction: column;
   margin-right: 15px;
+  padding-top: 5px;
 `;
 
 export const RestaurantName = styled.Text`

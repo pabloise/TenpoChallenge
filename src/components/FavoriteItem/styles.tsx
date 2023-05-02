@@ -33,14 +33,13 @@ export const RestaurantImage = styled.Image`
   height: 40px;
   position: absolute;
   left: 15px;
-  top: 28px;
+  top: 10px;
   z-index: 2;
 `;
 
 export const FavoriteName = styled.Text`
   font-family: 'Gotham-Light';
   font-size: 12px;
-  display: flex;
 `;
 
 export const StarImage = styled.Image`
